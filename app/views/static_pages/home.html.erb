@@ -1,0 +1,40 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h2>
+      <b>Twitter clone practice</b>.<br><br>Based on Hartl's ubiquitous tutorial.
+    </h2>
+    <div id="subjects">
+      <ul>
+        <li class="subj">User model, registration, validation, password reset.</li>
+        <li class="subj">Micropost model, file upload, index, access, removal.</li>
+        <li class="subj">Relationship model, following, unfollowing.</li>
+        <li class="subj">Temporary and permanent sessions, digests, cookies.</li>
+        <li class="subj">Git version control, heroku deployment, AWS hosting.</li>
+        <li class="subj">Palindrome deified, Hartl Ch. 4, rails flavored ruby.</li>
+        <li class="subj">Other miscellaneous subjects.</li><br>
+      </ul>
+    </div>
+    <%= link_to "Registration", signup_path, class: "btn btn-lg btn-default" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/' %>
+<% end %>
