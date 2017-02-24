@@ -28,7 +28,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'rails-tutorial-mhartl.c9users.io'
+  host = 'http://twitter-clone-rails-5-eclipse7.c9users.io:8080/'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   config.action_mailer.perform_caching = false
 
